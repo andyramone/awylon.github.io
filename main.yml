@@ -1,9 +1,11 @@
 # Runner script for installing .Net framework 4.6.2
 
 ---
-    - name: Hello World
-      hosts: localhost
-
-      tasks:
-        - name: Display Text
-          shell: echo “Hello World!”
+- name: Download .net 4.6.2
+  hosts: VA1USWFWWSPGP01
+ 
+  tasks:
+    - name: Download .net 4.6.2 installer
+      win_get_url:
+        url: 'http://download.microsoft.com/download/F/9/4/F942F07D-F26F-4F30-B4E3-EBD54FABA377/NDP462-KB3151800-x86-x64-AllOS-ENU.exe'
+        dest: 'C:\Users\Administrator\Downloads\httpd-2.2.25-win32-x86-no_ssl.msi'
